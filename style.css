@@ -1,0 +1,181 @@
+/* style.css - VERSI DIPERBAIKI (LEBIH RESPONSIF) */
+
+/* 1. Reset Global dan Box Sizing */
+*,
+*::before,
+*::after {
+    /* Box-sizing memudahkan perhitungan: lebar elemen = konten + padding + border */
+    box-sizing: border-box; 
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f7f6; /* Latar belakang lembut */
+    color: #333;
+    line-height: 1.6;
+}
+
+/* 2. Penataan Kontainer Utama */
+header, section, footer {
+    max-width: 700px; /* Lebar fokus */
+    margin: 40px auto;
+    padding: 20px;
+}
+
+.card {
+    background-color: #ffffff;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Header Profil */
+.profile-header {
+    text-align: center;
+    padding: 40px 20px;
+    background-color: #2c3e50; /* Warna gelap */
+    color: white;
+    border-radius: 8px 8px 0 0; 
+}
+
+#profile-picture {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%; 
+    object-fit: cover;
+    border: 5px solid #3498db; 
+    margin-bottom: 15px;
+}
+
+.tagline {
+    font-style: italic;
+    color: #bdc3c7;
+}
+
+/* Bagian Biografi dan Link */
+h2 {
+    color: #2c3e50;
+    border-bottom: 2px solid #ecf0f1;
+    padding-bottom: 10px;
+    margin-top: 0;
+}
+
+.bio-section {
+    margin-top: -20px; 
+    border-radius: 0 0 8px 8px; 
+}
+
+/* 3. Perbaikan Link Section (Flex-wrap) */
+.links-section ul {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    gap: 25px;
+    margin-bottom: 25px;
+    /* Tambahkan wrap agar link turun ke baris baru di layar kecil */
+    flex-wrap: wrap; 
+}
+
+.links-section li {
+    /* Tambahkan margin bawah agar tidak menempel saat wrapping */
+    margin-bottom: 10px; 
+}
+
+.links-section a {
+    text-decoration: none;
+    color: #3498db; 
+    font-weight: bold;
+    transition: color 0.3s ease;
+    display: flex;
+    align-items: center;
+}
+
+.links-section a:hover {
+    color: #2980b9; 
+}
+
+/* Penataan Icon */
+.links-section a i {
+    font-size: 1.2em;
+    margin-right: 8px;
+    color: #3498db; 
+    transition: color 0.3s ease; 
+}
+
+/* Penataan Icon saat di-Hover (Sesuai Warna Brand) */
+.links-section a:hover i.fa-github {
+    color: #333; 
+}
+.links-section a:hover i.fa-linkedin {
+    color: #0A66C2; 
+}
+.links-section a:hover i.fa-instagram {
+    color: #E1306C; 
+}
+.links-section a:hover i.fa-envelope {
+    color: #4285F4; 
+}
+
+
+/* Tombol */
+#toggle-bio-button {
+    display: block; 
+    width: 100%;
+    background-color: #e74c3c;
+    color: white;
+    border: none;
+    padding: 12px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 15px;
+    transition: background-color 0.3s ease;
+}
+
+#toggle-bio-button:hover {
+    background-color: #c0392b;
+}
+
+/* Footer */
+footer {
+    text-align: center;
+    font-size: 0.8em;
+    color: #7f8c8d;
+    padding: 10px;
+}
+
+/* ======================================= */
+/* 4. MEDIA QUERIES UNTUK RESPONSIFITAS MOBILE */
+/* ======================================= */
+
+@media (max-width: 480px) {
+    /* Menyesuaikan margin dan padding untuk layar HP */
+    header, section, footer {
+        /* Mengurangi margin atas/bawah dan menambahkan margin samping agar tidak menempel */
+        margin: 20px 10px; 
+        /* Mengurangi padding di dalam kontainer */
+        padding: 15px; 
+    }
+
+    .profile-header {
+        /* Mengurangi padding header di mobile */
+        padding: 25px 15px;
+    }
+
+    #profile-picture {
+        /* Mengurangi ukuran foto sedikit di mobile */
+        width: 120px;
+        height: 120px;
+    }
+
+    /* Mengurangi ukuran font agar lebih proporsional di layar kecil */
+    .profile-header h1 {
+        font-size: 1.8em;
+    }
+
+    .links-section ul {
+        /* Mengurangi gap antar link di mobile */
+        gap: 15px; 
+    }
+}
