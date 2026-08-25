@@ -1,46 +1,34 @@
-// Fungsi ini akan dijalankan setelah seluruh halaman dimuat
 document.addEventListener('DOMContentLoaded', function() {
-    // 1. Ambil elemen-elemen penting
+    // 1. Element selection
     const toggleButton = document.getElementById('toggle-bio-button');
     const bioTextElement = document.getElementById('bio-text');
-    const nameDisplay = document.getElementById('name-display');
+    const buttonText = toggleButton.querySelector('span');
 
-    // 2. Tentukan teks biografi penuh dan ringkas
+    // 2. Prepare text length truncation
     const fullBio = bioTextElement.textContent.trim();
-    const shortBioLength = 150; 
+    const shortBioLength = 160; 
     let shortBio = fullBio.substring(0, shortBioLength);
 
-    // Pastikan shortBio tidak memotong kata, tambahkan "..."
     if (fullBio.length > shortBioLength) {
         shortBio = shortBio.substring(0, shortBio.lastIndexOf(" ")) + '...';
     }
 
-    // 3. Inisialisasi: tampilkan biografi yang ringkas
+    // 3. Initial setup
     bioTextElement.textContent = shortBio;
-    toggleButton.textContent = 'Lihat Selengkapnya';
+    buttonText.textContent = 'See More';
 
-    let isFullBio = false; // Status: False berarti yang ditampilkan adalah ringkasan
+    let isFullBio = false;
 
-    // 4. Tambahkan event listener untuk tombol (Toggle Bio)
+    // 4. Toggle Event
     toggleButton.addEventListener('click', function() {
         if (isFullBio) {
-            // Ubah menjadi ringkas
             bioTextElement.textContent = shortBio;
-            toggleButton.textContent = 'Lihat Selengkapnya';
+            buttonText.textContent = 'See More';
             isFullBio = false;
         } else {
-            // Ubah menjadi penuh
             bioTextElement.textContent = fullBio;
-            toggleButton.textContent = 'Lihat Ringkasan';
+            buttonText.textContent = 'See Less';
             isFullBio = true;
         }
-    });
-
-    // 5. Tambahkan interaksi visual (Contoh: Efek hover pada Nama)
-    nameDisplay.addEventListener('mouseover', function() {
-        nameDisplay.style.color = '#3498db'; // Biru saat di-hover
-    });
-    nameDisplay.addEventListener('mouseout', function() {
-        nameDisplay.style.color = 'white'; // Kembali ke warna putih
     });
 });
