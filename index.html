@@ -1,57 +1,98 @@
 <!DOCTYPE html>
-<html lang="id">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Profil - Bilal </title>
+    <title>Al Bilal Sapto Bahari | Engineering Portfolio</title>
     
+    <!-- FontAwesome & Google Fonts -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;600&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-    <header class="profile-header">
-        <img src="assets/profile.jpg" alt="Foto Profil" id="profile-picture">
-        <h1 id="name-display">Al Bilal Sapto Bahari</h1>
-        <p class="tagline"> Engineering Student </p>
-    </header>
+    <div class="tech-grid-bg"></div>
 
-    <section class="bio-section card">
-        <h2>About Me</h2>
-        <p id="bio-text">
-            Hi! 👋 I’m a graduate of Applied Electronics Engineering from Politeknik Negeri Malang, with a foundational background in Electrical Power Installation from vocational high school.
-            I have a strong interest in control system integration, embedded systems, and industrial automation.
-            With my practical expertise in the electrical field, I am dedicated to supporting the effective and efficient implementation of modern technology.
-            #ElektroLoss — always learning, always building, and ready to power the future! 🔋✨
-        </p>
-    </section>
+    <main class="dashboard-container">
+        
+        <!-- Sidebar / Main Profile Card -->
+        <aside class="profile-card">
+            <div class="status-badge">
+                <span class="status-dot"></span> SYSTEM ONLINE
+            </div>
+            
+            <div class="avatar-container">
+                <img src="assets/profile.jpg" alt="Foto Profil" id="profile-picture">
+            </div>
 
-    <section class="links-section card">
-        <h2>Contact Me</h2>
-        <ul id="contact-list">
-            <li><a href="https://github.com/ilal15" target="_blank">
-                <i class="fab fa-github"></i> GitHub
-            </a></li>
-            <li><a href="https://www.instagram.com/al_albilal" target="_blank">
-            <i class="fab fa-instagram"></i> Instagram
-            </a></li>
-            <li><a href="https://linkedin.com/in/albilalsaptobahari" target="_blank">
-                <i class="fab fa-linkedin"></i> LinkedIn
-            </a></li>
-            <li><a href="mailto:bilalku151101@gmail.com">
-                <i class="fas fa-envelope"></i> Email
-            </a></li>
-        </ul>
-        <button id="toggle-bio-button">See More</button>
-    </section>
+            <h1 id="name-display">Al Bilal Sapto Bahari</h1>
+            <p class="tagline">&lt;Engineering Student /&gt;</p>
+            
+            <div class="spec-badges">
+                <span>Applied Electronics</span>
+                <span>Control Systems</span>
+                <span>Automation</span>
+            </div>
 
-    <footer>
-        <p>&copy; 2026 Bengkel Elektro </p>
-    </footer>
+            <div class="divider"></div>
+
+            <div class="contact-grid">
+                <a href="https://github.com/ilal15" target="_blank" class="contact-btn github">
+                    <i class="fab fa-github"></i>
+                    <span>GitHub</span>
+                </a>
+                <a href="https://linkedin.com/in/albilalsaptobahari" target="_blank" class="contact-btn linkedin">
+                    <i class="fab fa-linkedin"></i>
+                    <span>LinkedIn</span>
+                </a>
+                <a href="https://www.instagram.com/al_albilal" target="_blank" class="contact-btn instagram">
+                    <i class="fab fa-instagram"></i>
+                    <span>Instagram</span>
+                </a>
+                <a href="mailto:bilalku151101@gmail.com" class="contact-btn email">
+                    <i class="fas fa-envelope"></i>
+                    <span>Email</span>
+                </a>
+            </div>
+        </aside>
+
+        <!-- Main Content Area -->
+        <section class="content-area">
+            
+            <!-- Terminal / About Me Section -->
+            <div class="terminal-card">
+                <div class="terminal-header">
+                    <div class="terminal-dots">
+                        <span class="dot red"></span>
+                        <span class="dot yellow"></span>
+                        <span class="dot green"></span>
+                    </div>
+                    <span class="terminal-title">about_me.sys</span>
+                </div>
+                <div class="terminal-body">
+                    <p id="bio-text">
+                        Hi! 👋 I’m a graduate of Applied Electronics Engineering from Politeknik Negeri Malang, with a foundational background in Electrical Power Installation from vocational high school.
+                        I have a strong interest in control system integration, embedded systems, and industrial automation.
+                        With my practical expertise in the electrical field, I am dedicated to supporting the effective and efficient implementation of modern technology.
+                        #ElektroLoss — always learning, always building, and ready to power the future! 🔋✨
+                    </p>
+                    <button id="toggle-bio-button" class="tech-button">
+                        <i class="fas fa-terminal"></i> <span>See More</span>
+                    </button>
+                </div>
+            </div>
+
+            <!-- Footer -->
+            <footer class="tech-footer">
+                <p>SYS_VER: 2026.1 &bull; &copy; Bengkel Elektro</p>
+            </footer>
+
+        </section>
+
+    </main>
 
     <script src="script.js"></script>
 </body>
-
 </html>
-
